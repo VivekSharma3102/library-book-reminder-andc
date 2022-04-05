@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateEvent"
+    android:layout_marginTop="20dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:id="@+id/andc_image"
+            android:layout_width="177dp"
+            android:layout_height="171dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/andc_logo" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/editext_BookName"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Enter Book Name "
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:background="#E1DFE6"
+        android:layout_marginBottom="10dp"
+        android:text="Return date"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:background="#E1DFE6"
+        android:text="Return Time"
+        android:textAllCaps="false"
+        android:textColor="#000" />
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:text="ADD"
+        android:textSize="18sp"
+        android:textColor="#fff" />
+</LinearLayout>
