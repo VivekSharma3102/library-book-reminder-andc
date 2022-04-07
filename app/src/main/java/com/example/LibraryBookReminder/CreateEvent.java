@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -31,6 +32,9 @@ import java.util.Date;
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener {
     Button btn_time, btn_date, btn_done;
     EditText BookName;
+
+    TextView Vid ;
+
     String timeTonotify;
     DatabaseClass databaseClass;
 
@@ -38,6 +42,9 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
+
+        Vid = findViewById(R.id.Vid);
+
         btn_time = findViewById(R.id.btn_time);
         btn_date = findViewById(R.id.btn_date);
         btn_done = findViewById(R.id.btn_done);
@@ -68,9 +75,12 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(this, "Please select Return date and time", Toast.LENGTH_SHORT).show();
             } else {
                 EntityClass entityClass = new EntityClass();
+                int id = (Vid.getText().hashCode());
                 String value = (BookName.getText().toString().trim());
                 String date = (btn_date.getText().toString().trim());
                 String time = (btn_time.getText().toString().trim());
+
+                entityClass.setVid(id);
                 entityClass.setEventdate(date);
                 entityClass.setEventname(value);
                 entityClass.setEventtime(time);
@@ -134,17 +144,6 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK && data != null) {
-                ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                BookName.setText(text.get(0));
-            }
-        }
-
-    }
 
     private void setAlarm(String text, String date, String time) {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);

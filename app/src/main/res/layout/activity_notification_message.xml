@@ -10,11 +10,22 @@
     <TextView
         android:id="@+id/tv_message"
         android:layout_width="match_parent"
-        android:layout_height="258dp"
+        android:layout_height="190dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Hello"
-        android:textColor="@color/red"
+        android:paddingTop="50dp"
+        android:textColor="@color/colorPrimary"
         android:textSize="20dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:textColor="@color/colorPrimary"
+        android:text="Please Return Your This Book "
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
 </LinearLayout>

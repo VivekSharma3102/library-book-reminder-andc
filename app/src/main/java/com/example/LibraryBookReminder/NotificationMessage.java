@@ -1,12 +1,16 @@
 package com.example.LibraryBookReminder;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NotificationMessage extends AppCompatActivity {
     TextView textView;
+    Button cancel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,4 +21,5 @@ public class NotificationMessage extends AppCompatActivity {
         textView.setText(bundle.getString("message"));
 
     }
+
 }

@@ -19,7 +19,7 @@ public abstract class DatabaseClass extends RoomDatabase {
                     INSTANCE =
                             Room.databaseBuilder(context.getApplicationContext(),
                                     DatabaseClass.class,
-                                    "product_database").allowMainThreadQueries().build();
+                                    "Book_database").allowMainThreadQueries().build();
                 }
             }
         }
