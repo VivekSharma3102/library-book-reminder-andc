@@ -4,11 +4,14 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.UUID;
+
 @Entity(tableName = "Book_Return")
 public class EntityClass {
     @PrimaryKey(autoGenerate = true)
-    int id;
-
+    int id ;
+//    @ColumnInfo(name = "Book_id")
+//    private int Vid;
 
     @ColumnInfo(name = "eventname")
     String eventname;
@@ -17,11 +20,9 @@ public class EntityClass {
     @ColumnInfo(name = "eventtime")
     String eventtime;
 
-    public int getVid(){return id;}
-
-    public void setVid(int id) {
-        this.id = id;
-    }
+//    public int getVid() { return Vid; }
+//
+//    public void setVid(int Vid) {this.Vid = id; }
 
     public String getEventname() {
         return eventname;

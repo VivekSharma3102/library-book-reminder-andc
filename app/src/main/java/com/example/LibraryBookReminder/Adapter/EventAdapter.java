@@ -36,25 +36,24 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        holder.Vid.setText(String.valueOf(entityClasses.get(position).getVid()));
         holder.eventText.setText(entityClasses.get(position).getEventname());
         holder.timeAndDateText.setText(entityClasses.get(position).getEventdate() + " " + entityClasses.get(position).getEventtime());
-        holder.cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseClass INSTANCE =
-                        Room.databaseBuilder(holder.Vid.getContext(),
-                                DatabaseClass.class,"Book_database").allowMainThreadQueries().build();
 
-                EventDao eventDao = INSTANCE.EventDao();
-//                to delete the record from database
-                eventDao.deleteById(entityClasses.get(position).getVid());
-                entityClasses.remove(position);
-                notifyDataSetChanged();
-
-
-            }
-        });
+//        holder.delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DatabaseClass INSTANCE = Room.databaseBuilder(holder.toplayout.getContext(),
+//                        DatabaseClass.class,"Book_database").allowMainThreadQueries().build();
+//
+//                EventDao eventDao = INSTANCE.eventDao;
+//                //                to delete the record from database
+//                eventDao.deleteById(entityClasses.get(position).getVid());
+//                entityClasses.remove(position);
+//                notifyDataSetChanged();
+//
+//
+//            }
+//        });
     }
 
     @Override
@@ -63,17 +62,16 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView eventText, timeAndDateText , Vid;
+        private TextView eventText, timeAndDateText;
         private LinearLayout toplayout;
-        Button cancel;
+//        private Button delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            Vid = itemView.findViewById(R.id.Vid);
-            eventText =itemView.findViewById(R.id.event);
-            timeAndDateText = itemView.findViewById(R.id.time_and_date);
-            toplayout =  itemView.findViewById(R.id.toplayout);
-            cancel = itemView.findViewById(R.id.cancel);
+            eventText = (TextView) itemView.findViewById(R.id.event);
+            timeAndDateText = (TextView) itemView.findViewById(R.id.time_and_date);
+            toplayout = (LinearLayout) itemView.findViewById(R.id.toplayout);
+//            delete = itemView.findViewById(R.id.delete);
         }
     }
 }

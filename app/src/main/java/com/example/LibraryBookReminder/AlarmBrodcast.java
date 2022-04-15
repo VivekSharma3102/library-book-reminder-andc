@@ -41,13 +41,13 @@ public class AlarmBrodcast extends BroadcastReceiver {
         mBuilder.setOngoing(true);
         mBuilder.setPriority(Notification.PRIORITY_HIGH);
         mBuilder.setOnlyAlertOnce(true);
-        mBuilder.build().flags = Notification.FLAG_NO_CLEAR | Notification.PRIORITY_HIGH;
+        mBuilder.build();
         mBuilder.setContent(contentView);
         mBuilder.setContentIntent(pendingIntent);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "channel_id";
-            NotificationChannel channel = new NotificationChannel(channelId, "LibraryBook", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel = new NotificationChannel(channelId, "LibraryBookReminder", NotificationManager.IMPORTANCE_HIGH);
             channel.enableVibration(true);
             notificationManager.createNotificationChannel(channel);
             mBuilder.setChannelId(channelId);

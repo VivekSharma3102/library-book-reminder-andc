@@ -9,6 +9,7 @@ import androidx.room.RoomDatabase;
 @Database(entities = {EntityClass.class}, version = 1)
 public abstract class DatabaseClass extends RoomDatabase {
     private static DatabaseClass INSTANCE;
+    public EventDao eventDao;
 
     public abstract EventDao EventDao();
 
