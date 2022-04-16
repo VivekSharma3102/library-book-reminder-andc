@@ -33,12 +33,12 @@ public class AlarmBrodcast extends BroadcastReceiver {
         RemoteViews contentView = new RemoteViews(context.getPackageName(), R.layout.notification_layout);
         contentView.setImageViewResource(R.id.image, R.mipmap.ic_launcher);
         PendingIntent pendingSwitchIntent = PendingIntent.getBroadcast(context, 0, intent1, 0);
-        contentView.setOnClickPendingIntent(R.id.cancel, pendingSwitchIntent);
+        //contentView.setOnClickPendingIntent(R.id.cancel, pendingSwitchIntent);
         contentView.setTextViewText(R.id.BookN, text);
         contentView.setTextViewText(R.id.date, date);
         mBuilder.setSmallIcon(R.drawable.ic_alarm_white_24dp);
         mBuilder.setAutoCancel(true);
-        mBuilder.setOngoing(true);
+        mBuilder.setOngoing(false);
         mBuilder.setPriority(Notification.PRIORITY_HIGH);
         mBuilder.setOnlyAlertOnce(true);
         mBuilder.build();
