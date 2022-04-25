@@ -2,30 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_centerHorizontal="true"
     tools:context=".NotificationMessage">
 
 
     <TextView
         android:id="@+id/tv_message"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:gravity="center"
+        android:padding="10dp"
         android:text="Hello"
-        android:paddingTop="50dp"
+        android:fontFamily="serif-monospace"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:textColor="@color/colorPrimary"
-        android:text="Please Return Your This Book "
-        android:textAlignment="center"
-        android:textSize="24sp" />
+
 
 </LinearLayout>

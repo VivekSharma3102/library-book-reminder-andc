@@ -17,7 +17,7 @@ public class AlarmBrodcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Bundle bundle = intent.getExtras();
-        String text = bundle.getString("event");
+        String text ="Please Return Your "+ bundle.getString("event")+" "+"Book";
         String date = bundle.getString("date") + " " + bundle.getString("time");
 
         //Click on Notification
@@ -32,8 +32,7 @@ public class AlarmBrodcast extends BroadcastReceiver {
 
         RemoteViews contentView = new RemoteViews(context.getPackageName(), R.layout.notification_layout);
         contentView.setImageViewResource(R.id.image, R.mipmap.ic_launcher);
-        PendingIntent pendingSwitchIntent = PendingIntent.getBroadcast(context, 0, intent1, 0);
-        //contentView.setOnClickPendingIntent(R.id.cancel, pendingSwitchIntent);
+
         contentView.setTextViewText(R.id.BookN, text);
         contentView.setTextViewText(R.id.date, date);
         mBuilder.setSmallIcon(R.drawable.ic_alarm_white_24dp);

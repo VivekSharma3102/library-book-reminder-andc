@@ -42,9 +42,6 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
-
-//        Vid = findViewById(R.id.Vid);
-
         btn_time = findViewById(R.id.btn_time);
         btn_date = findViewById(R.id.btn_date);
         btn_done = findViewById(R.id.btn_done);
@@ -75,12 +72,9 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(this, "Please select Return date and time", Toast.LENGTH_SHORT).show();
             } else {
                 EntityClass entityClass = new EntityClass();
-//                int id = (Vid.getText().hashCode());
                 String value = (BookName.getText().toString().trim());
                 String date = (btn_date.getText().toString().trim());
                 String time = (btn_time.getText().toString().trim());
-
-//                entityClass.setVid(id);
                 entityClass.setEventdate(date);
                 entityClass.setEventname(value);
                 entityClass.setEventtime(time);

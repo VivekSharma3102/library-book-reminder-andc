@@ -10,7 +10,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="660dp"
+        android:layout_above="@+id/btn_createEvent"
+        android:layout_marginBottom="2dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -21,7 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="62dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="2dp"
         android:background="@color/red"
         android:text="Add Book"
         android:textAllCaps="false"
