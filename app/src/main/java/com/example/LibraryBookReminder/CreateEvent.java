@@ -109,6 +109,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
                 btn_date.setText(day + "-" + (month + 1) + "-" + year);
             }
         }, year, month, day);
+        datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
         datePickerDialog.show();
     }
 
